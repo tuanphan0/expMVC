@@ -1,0 +1,31 @@
+[
+
+  {
+    "ID": "2001181400",
+    "FullName": "Phan Manh Tuan",
+    "Address": "Binh Thuan",
+    "BirthDay": "11/01/2000",
+    "Gender": "Nam"
+  },
+  {
+    "ID": "2001181156",
+    "FullName": "Nguyen Van Khoa",
+    "Address": "Binh Thuan",
+    "BirthDay": "11/01/2000",
+    "Gender": "Nam"
+  },
+  {
+    "ID": "2001181145",
+    "FullName": "Ngo Thanh Long",
+    "Address": "Binh Thuan",
+    "BirthDay": "11/01/2000",
+    "Gender": "Nam"
+  },
+  {
+    "ID": "2001181431",
+    "FullName": "Le Nguyen Hung Vy",
+    "Address": "Binh Thuan",
+    "BirthDay": "11/01/2000",
+    "Gender": "Nam"
+  }
+]

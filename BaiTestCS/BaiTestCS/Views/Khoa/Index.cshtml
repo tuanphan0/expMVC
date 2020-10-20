@@ -1,0 +1,48 @@
+﻿@model PagedList.IPagedList<Data.Student>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Ten)*@
+            Ten
+        </th>
+        <th>Dia Chi</th>
+        <th>Nggay Sinh</th>
+        <th>Gioi Tinh</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelitem => item.TenSV)    
+        </td>
+        <td>
+            @Html.DisplayFor(modelitem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelitem => item.NgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelitem => item.GioiTinh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager(Model,page => Url.Action("Index",new { page}))

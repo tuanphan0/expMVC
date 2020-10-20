@@ -1,0 +1,40 @@
+﻿
+@model List<BaiTestCS.Models.Models.StudentModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>FullName</th>
+                    <th>Address</th>
+                    <th>BirthDay</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+
+            @{
+                foreach (var studentModel in Model)
+                {
+                    <tr>
+                        <td>@studentModel.ID</td>
+                        <td>@studentModel.FullName</td>
+                        <td>@studentModel.Address</td>
+                        <td>@studentModel.BirthDay</td>
+                        <td>@studentModel.Gender</td>
+                    </tr>
+                }
+
+            }
+        </table>
+    </div>
+</body>
+</html>
