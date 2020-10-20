@@ -17,6 +17,7 @@ namespace BaiTestCS.Controllers
         // GET: Student
         public ActionResult Index()
         {
+            //sua code
             var stds = _studentRepository.GetStudents();
             return View(stds);
         }
