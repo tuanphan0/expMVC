@@ -1,40 +1,58 @@
-﻿
-@model List<BaiTestCS.Models.Models.StudentModel>
+﻿@model IEnumerable<Data.Student>
 
-<!DOCTYPE html>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        <table>
-            <thead class="table-primary">
-                <tr>
-                    <th>ID</th>
-                    <th>FullName</th>
-                    <th>Address</th>
-                    <th>BirthDay</th>
-                    <th>Gender</th>
-                </tr>
-            </thead>
+<h2>Index</h2>
 
-            @{
-                foreach (var studentModel in Model)
-                {
-                    <tr>
-                        <td>@studentModel.ID</td>
-                        <td>@studentModel.FullName</td>
-                        <td>@studentModel.Address</td>
-                        <td>@studentModel.BirthDay</td>
-                        <td>@studentModel.Gender</td>
-                    </tr>
-                }
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Khoa.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GioiTinh)
+        </th>
+        <th></th>
+    </tr>
 
-            }
-        </table>
-    </div>
-</body>
-</html>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Khoa.Ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GioiTinh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

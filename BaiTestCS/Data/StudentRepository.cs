@@ -47,7 +47,9 @@ namespace Data
 
         void Create(Student student)
         {
-            throw new NotImplementedException();
+            data.Student.Add(student);
+            data.SaveChanges();
+            
         }
 
         public bool Delete(int id)
@@ -62,7 +64,7 @@ namespace Data
 
         public List<Student> GetStudents()
         {
-            return data.Student.ToList();
+            return data.Student.OrderByDescending(x=>x.Id).ToList();
         }
 
         void IStudentRepository.Create(Student student)

@@ -31,11 +31,6 @@
                                 @*@Html.ActionLink("Khoa","",new { @class= "dropdown-item" })
                     <a class="dropdown-item" href="#"></a><br />
                     <a class="dropdown-item" href="#"></a>*@
-                                @foreach (Data.Khoa khoa in ViewBag.Khoas)
-                                {
-                                    @*<a class="dropdown-item" href="">@khoa.Ten</a><br />*@
-                                    @Html.ActionLink(khoa.Ten, "PageStudent");
-                                }
                             </div>
                         </div>
                     </li>

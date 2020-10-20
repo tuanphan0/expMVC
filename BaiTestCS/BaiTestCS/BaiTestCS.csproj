@@ -2181,7 +2181,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\HomeController\Index.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\DSSV\Index.cshtml" />
     <Content Include="Views\DSSV\Create.cshtml" />
     <Content Include="Views\DSSV\Edit.cshtml" />
@@ -2195,6 +2194,8 @@
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

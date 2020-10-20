@@ -10,9 +10,11 @@ namespace BaiTestCS.Controllers
     public class StudentController : Controller
     {
         private readonly IStudentRepository _studentRepository;
+        QlSinhVienData data;
 
         public StudentController() {
             _studentRepository = new StudentRepository();
+            data = new QlSinhVienData();
         }
         // GET: Student
         public ActionResult Index()
@@ -31,16 +33,20 @@ namespace BaiTestCS.Controllers
         // GET: Student/Create
         public ActionResult Create()
         {
+            ViewBag.khoa = new SelectList(data.Khoa.ToList().OrderBy(x => x.Ten), "Id", "Ten");
             return View();
         }
 
         // POST: Student/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Student student, FormCollection collection)
         {
             try
             {
                 // TODO: Add insert logic here
+                ViewBag.khoa = new SelectList(data.Khoa.ToList().OrderBy(x => x.Ten), "Id", "Ten");
+                _studentRepository.Create(student);
+
 
                 return RedirectToAction("Index");
             }
