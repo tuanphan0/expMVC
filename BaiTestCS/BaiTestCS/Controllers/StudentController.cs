@@ -12,7 +12,8 @@ namespace BaiTestCS.Controllers
         private readonly IStudentRepository _studentRepository;
         QlSinhVienData data;
 
-        public StudentController() {
+        public StudentController()
+        {
             _studentRepository = new StudentRepository();
             data = new QlSinhVienData();
         }
@@ -44,14 +45,20 @@ namespace BaiTestCS.Controllers
             try
             {
                 // TODO: Add insert logic here
+
                 ViewBag.khoa = new SelectList(data.Khoa.ToList().OrderBy(x => x.Ten), "Id", "Ten");
-                _studentRepository.Create(student);
+                if (ModelState.IsValid)
+                {
+                    _studentRepository.Create(student);
+                    return RedirectToAction("Index");
 
+                }
+                return View();
 
-                return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
+                ModelState.AddModelError("", ex.Message);
                 return View();
             }
         }

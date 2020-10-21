@@ -45,7 +45,7 @@ namespace Data
             data = new QlSinhVienData();
         }
 
-        void Create(Student student)
+        public void Create(Student student)
         {
             data.Student.Add(student);
             data.SaveChanges();
@@ -67,9 +67,6 @@ namespace Data
             return data.Student.OrderByDescending(x=>x.Id).ToList();
         }
 
-        void IStudentRepository.Create(Student student)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

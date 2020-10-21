@@ -15,10 +15,14 @@
         [StringLength(500)]
         public string DiaChi { get; set; }
 
+        [Required]
+        [System.ComponentModel.DisplayName("Ten sinh vien")]
         [StringLength(500)]
+        [MinLength(10, ErrorMessage ="avvv {0} {1}")]
         public string TenSV { get; set; }
 
         [StringLength(500)]
+        
         public string NgaySinh { get; set; }
 
         [StringLength(500)]
